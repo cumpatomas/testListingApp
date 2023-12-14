@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object UseCasesModule {
     @Provides
-    fun provideRemoteGetAllArticlesUseCase(articlesRepository: ArticleRepositoryInterface)
-            : ArticlesUseCaseInterface = ArticlesUseCaseImpl(articlesRepository)
+    fun provideRemoteGetAllArticlesUseCase(repository: ArticleRepositoryInterface)
+            : ArticlesUseCaseInterface = ArticlesUseCaseImpl(repository)
 }

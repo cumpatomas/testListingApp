@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object RepositoryModule {
     @Provides
-    fun providesRemoteArticlesRepository(implementation: RemoteArticleDataSourceInterface): ArticleRepositoryInterface =
-        ArticleRepositoryImpl(implementation)
+    fun providesRemoteArticlesRepository(datasource: RemoteArticleDataSourceInterface): ArticleRepositoryInterface =
+        ArticleRepositoryImpl(datasource)
 }

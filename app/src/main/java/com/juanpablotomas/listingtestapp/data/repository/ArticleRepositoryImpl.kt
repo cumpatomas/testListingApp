@@ -7,20 +7,19 @@ import com.juanpablotomas.listingtestapp.domain.repositories.ArticleRepositoryIn
 
 
 class ArticleRepositoryImpl(
-    private val remoteDataSource: RemoteArticleDataSourceInterface
+        private val remoteDataSource: RemoteArticleDataSourceInterface
 ) : ArticleRepositoryInterface {
 
     override suspend fun getAllArticles(): List<Article> {
-
         return remoteDataSource.getAll().map { it.toDomain() }
     }
 
-    fun ArticleDto.toDomain(): Article = Article(
-        id = id,
-        title = title,
-        date = date,
-        link = link,
-        photo = photo,
-        source = source
+    private fun ArticleDto.toDomain(): Article = Article(
+            id = id,
+            title = title,
+            date = date,
+            link = link,
+            photo = photo,
+            source = source
     )
 }

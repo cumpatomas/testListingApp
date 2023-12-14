@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object DataSourceModule {
     @Provides
-    fun providesRemoteArticleDataSource(implementation: RemoteArticleApi): RemoteArticleDataSourceInterface =
-        RemoteArticleDataSourceImplementation(implementation)
+    fun providesRemoteArticleDataSource(api: RemoteArticleApi): RemoteArticleDataSourceInterface =
+        RemoteArticleDataSourceImplementation(api)
 }
